@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/shivamv12/NodeJS-Speech-Recognition/issues"
   },
-  "homepage": "https://github.com/shivamv12/NodeJS-Speech-Recognition#readme"
+  "homepage": "https://github.com/shivamv12/NodeJS-Speech-Recognition#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
