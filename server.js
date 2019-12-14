@@ -1,8 +1,6 @@
 /** Core Packages */
-const fs = require("fs");
 
 /** NPM Packages */
-const https = require('https');
 const express = require('express');
 
 /** Initialize Express */
@@ -11,17 +9,14 @@ const app = express();
 /** Static Middleware : Serves static files (CSS, JS, Html, Images ...) */
 app.use(express.static(__dirname + '/public'));
 
-/** Load Certificate & Private Key */
-const privateKey = fs.readFileSync('privatekey.pem').toString();
-const certificate = fs.readFileSync('certificate.pem').toString();
+const PORT = 5000;
 
 /** Creating a Server */
-const httpOptions = { key: privateKey, cert: certificate };
-https.createServer(httpOptions, app).listen(process.env.PORT, () => {
-    console.log("Server on " + process.env.PORT);
+const server = app.listen(PORT, () => {
+    console.log("Server running at " + `http://localhost:${PORT}/`);
 });
 
-/** Route to Home Page */
+/** Route to Player Page */
 app.get('/', function (req, res) {
-    res.sendFile(__dirname + '/public/player.html');
+    res.sendFile(__dirname + '/public/player.htm');
 });
