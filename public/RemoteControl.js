@@ -10,6 +10,9 @@ class RemoteControl {
     this.videoElement.pause();
     this.videoElement.currentTime = 0;
   }
+  pause() {
+    this.videoElement.pause();
+  }
   mute() {
     this.videoElement.muted = true;
   }
